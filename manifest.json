@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "translate add",
+    "version": "0.1",
+    "author": "hada",
+    "description": "翻訳した結果を下に追加します。",
+    "browser_action": {
+        "default_icon": {
+            "38": "icon.png"
+        },
+        "default_title": "Do it!"
+    },
+    "permissions": ["tabs", "http://*/*", "https://*/*"],
+    "background": {
+        "scripts": ["jquery.min.js", "background.js"],
+        "persistent": false
+    },
+    "content_scripts": [{
+        "matches": ["https://*/*"],
+        "js": ["jquery.min.js", "content.js"]
+    }]
+}
